@@ -12,6 +12,8 @@ import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
+import Button from 'src/components/Button'
+
 const ResetPasswordPage = ({ resetToken }) => {
   const { reauthenticate, validateResetToken, resetPassword } = useAuth()
   const [enabled, setEnabled] = useState(true)
@@ -92,14 +94,7 @@ const ResetPasswordPage = ({ resetToken }) => {
                     <FieldError name="password" className="rw-field-error" />
                   </div>
 
-                  <div className="rw-button-group">
-                    <Submit
-                      className="rw-button rw-button-blue"
-                      disabled={!enabled}
-                    >
-                      Submit
-                    </Submit>
-                  </div>
+                  <Button disabled={!enabled}>Submit</Button>
                 </Form>
               </div>
             </div>
